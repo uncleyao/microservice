@@ -1,0 +1,49 @@
+Microservice means developing a single, small, meaningful functional feature as single service, each service has it's own process and communicate with lightweight mechanism, deployed in single or multiple servers.
+
+源文档 <https://www.javacodegeeks.com/2014/06/microservice-architecture-a-quick-guide.html> 
+
+
+Microservice is Service-oriented architecture (SOA) that structures an application as a collection of loosely coupled services. These smaller programs are grouped together to deliver all the functionalities of the big, monolithic app
+
+	• No limit to same code language, API (usually HTTP)
+	• Service should be fine-grained and the protocols should be lightweight.
+	• Decomposing improves modularity and makes the application easier to understand and develop and test.
+	• Independently deployable and testable
+	• Share nothing
+	• But drawback is Deployment complexity
+	• Complex communication
+
+Solution
+Services communicate using either synchronous protocols such as HTTP/REST or asynchronous protocols such as AMQP. Services can be developed and deployed independently of one another. Each service has its own database in order to be decoupled from other services. Data consistency between services is maintained using the Saga pattern
+
+源文档 <http://microservices.io/patterns/microservices.html> 
+
+
+Database
+Not only save itself, but also info that it will need
+
+
+
+
+Communication:
+Can be Synchronous:
+Rest over HTTP or drift
+
+Can be Asynchronous:
+ActiveNQ
+Kafka
+
+
+Architectures (in Java):
+Use open source
+Frameworks like springboot or wildfly swarm
+
+
+The communication is almost always stateless
+	• Event Store: 
+replay every cases, so ms can be deleted anytime
+	• Message Queue:
+NSQ
+
+
+
